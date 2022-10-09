@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background: #ffffff78;
+    display: flex;
+    flex-direction: column;
+    font: normal 400 16px/26px 'Roboto';
+    letter-spacing: 0.05em;
+}
+header {
+    height: 70px;
+	background: #31889985;
+    flex: none;
+    position: relative;
+    z-index: 1;
+}
+footer {
+    height: 100px;
+    background: #318099c7;
+	color: #ebf3fb54;
+	line-height: 100px;
+    flex: none;
+}
+.copyr {
+	text-align: center;
+}
+main {
+    background: linear-gradient(0deg, #EBF3FB 0%, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
+	flex: auto;
+    margin-top: -45px;
+}
+
+main .container {
+   
+	height: auto;
+	padding: 45px 0;
+	
+}
+
+.illustration	 {
+	float: left;
+    width: 500px;
+    height: 500px;
+    background: url('../images/more.png') center no-repeat;
+	padding: 45px 45px 0;
+}
+main h3 {
+    font-size: 50px;
+	line-height: 60px;
+    text-align: center;
+    margin: 64px 0 27px;
+}
+main p {
+    color: #1F3F68;
+	margin: 45px 0;
+}
