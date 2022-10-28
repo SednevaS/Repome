@@ -19,15 +19,12 @@
 				position: relative;
 				margin: auto;
 			}
+			button {
+				cursor: pointer;
+			}
 			h1 {
 				text-align: center;
 				font-size: 40px;
-			}
-			#prig {
-				font-weight: bold;
-				font-size: 30px;
-				margin-top: 100px;
-				text-align: center;
 			}
 			#but1 {
 				font-variant: small-caps;
@@ -38,7 +35,7 @@
 				box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
 				border: 3px solid #7675a5a8;
 				margin-left: 270px;
-				margin-top: 170px;
+				margin-top: 100px;
 			}
 			#but2 {
 				font-variant: small-caps;
@@ -50,6 +47,12 @@
 				border: 3px solid #7675a5a8;
 				margin-left: 350px;
 				margin-top: 50px;
+			}
+			#prig {
+				font-weight: bold;
+				font-size: 30px;
+				margin-top: 100px;
+				text-align: center;
 			}
 			#prvvod {
 				width: 100%;
@@ -87,6 +90,7 @@
 		<div>
 			<h1>Угадай число</h1>
 			<p id="prvvod">Введите число от 1 до 100</p>
+			<p id="prig">Чтобы начать игру - нажмите</p>
 			<p id="verno">ВЫ УГАДАЛИ!</p>
 			<input type="text" id="vvod">
 			<p id="malo">Надо больше</p>
@@ -106,6 +110,7 @@
             document.getElementById('but2').style.display = "inline-block";
             document.getElementById('vvod').style.display = "inline-block";
             document.getElementById('prvvod').style.display = "inline-block";
+			document.getElementById('prig').style.display = "none";
             document.getElementById('colp').style.display = "block";           
             counter = 0;
             document.getElementById('colp').innerHTML = "Количество попыток: " + counter;
