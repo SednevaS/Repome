@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+    
+		<title>Игра "Угадай число"</title>
+    
+		<style>
+			#vvod, #but2, #colp, #prvvod, #malo, #mnogo, #verno {
+				display: none;
+			}
+			div {
+				background-color: #c7ceef;
+				width: 800px;
+				height: 600px;
+				border: 3px solid #7675a5a8;
+				border-radius: 20px;
+				box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.3);
+				position: relative;
+				margin: auto;
+			}
+			h1 {
+				text-align: center;
+				font-size: 40px;
+			}
+			#prig {
+				font-weight: bold;
+				font-size: 30px;
+				margin-top: 100px;
+				text-align: center;
+			}
+			#but1 {
+				font-variant: small-caps;
+				width: 250px;
+				font-size: 30px;
+				background-color: #FFFAFA;
+				border-radius: 10px;
+				box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
+				border: 3px solid #7675a5a8;
+				margin-left: 270px;
+				margin-top: 170px;
+			}
+			#but2 {
+				font-variant: small-caps;
+				width: 100px;
+				font-size: 40px;
+				background-color: #7febff;
+				border-radius: 10px;
+				box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
+				border: 3px solid #7675a5a8;
+				margin-left: 350px;
+				margin-top: 50px;
+			}
+			#prvvod {
+				width: 100%;
+				font-weight: bold;
+				font-size: 30px;
+				margin-top: 70px;
+				text-align: center;
+			}
+			#vvod {
+				width: 200px;
+				font-size: 25px;
+				margin-left: 300px;
+				margin-top: 50px;
+				line-height: 30px;
+				border-radius: 10px;
+				box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
+			}
+			#colp {
+				width: 100%;
+				text-align: center;
+				margin-top: 60px;
+				font-weight: bold;
+				font-size: 20px;
+			}
+			#malo, #mnogo {
+				width: 100%;
+				text-align: center;
+				font-weight: bold;
+				font-size: 25px;
+				color: #FF4500;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Угадай число</h1>
+			<p id="prvvod">Введите число от 1 до 100</p>
+			<p id="verno">ВЫ УГАДАЛИ!</p>
+			<input type="text" id="vvod">
+			<p id="malo">Надо больше</p>
+			<p id="mnogo">Надо меньше</p>
+			<button type="button" id="but1">НАЧАЛО ИГРЫ</button>
+			<button type="button" id="but2">OK</button>    
+			<p id="colp"></p>
+		</div>
+    <script>
+        let counter = 0;
+        let num;
+		let summ = 0;
+		
+        document.getElementById('but1').onclick = function(){
+			summ = Math.floor(Math.random() * 100 +1);
+            document.getElementById('but1').style.display = "none";
+            document.getElementById('but2').style.display = "inline-block";
+            document.getElementById('vvod').style.display = "inline-block";
+            document.getElementById('prvvod').style.display = "inline-block";
+            document.getElementById('colp').style.display = "block";           
+            counter = 0;
+            document.getElementById('colp').innerHTML = "Количество попыток: " + counter;
+        }
+
+        document.getElementById('but2').onclick = function () {
+            num = document.getElementById('vvod').value;
+            num = +num;
+            counter++;
+            if (isNaN(num)){
+                alert ('Необходимо ввести число');              
+            }
+            if (num == summ) {                
+                document.getElementById('vvod').value = "";
+                document.getElementById('but1').style.display = "inline-block";
+                document.getElementById('but2').style.display = "none";
+                document.getElementById('vvod').style.display = "none";
+                document.getElementById('malo').style.display = "none";
+                document.getElementById('mnogo').style.display = "none";
+                document.getElementById('prvvod').style.display = "none";
+                document.getElementById('colp').style.display = "inline-block";
+                document.getElementById('colp').innerHTML = "Вы угадали число с " + counter + " попыток. Сыграем еще раз?";                        
+            } else if (num > summ){
+                document.getElementById('mnogo').style.display = "inline-block";
+                document.getElementById('malo').style.display = "none";
+                document.getElementById('colp').innerHTML = "Количество попыток: " + counter;               
+            } else {
+                document.getElementById('mnogo').style.display = "none";
+                document.getElementById('malo').style.display = "inline-block";
+                document.getElementById('colp').innerHTML = "Количество попыток: " + counter;
+            }   
+        }   
+    </script>
+	</body>
+</html>
