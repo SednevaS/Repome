@@ -6,7 +6,8 @@
 		<title>Модальное окно</title>
 		
 		<style>
-			body {
+			html, body {
+				height: 100%;
 				background: linear-gradient(to top left, powderblue, pink)
 			}
 			.popup-open {
@@ -55,6 +56,11 @@
 				right: 10px;
 			}
 		</style>
+		<script src="jquery-3.6.1.min.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		
 		<a class="popup-open" href="#">Открыть</a>
 
 		<div class="popup-fade">
@@ -63,9 +69,6 @@
 				<p>Здравствуйте, я ваша тетя!</p>
 			</div>		
 		</div>
-
-
-		<script src="jquery-3.6.1.min.js"></script>
-		<script src="index.js"></script>
-	</head>
+		
+	</body>
 </html>
